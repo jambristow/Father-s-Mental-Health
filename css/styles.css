@@ -1,49 +1,4 @@
 /***************************
- SPECIFIC 
- **************************/
-
-.main-header {
-	background-color: #137abe;
-	margin: 0;
-	height: 150px;
-	box-shadow: 0 10px 5px #000;
-	box-shadow: 0 0 10px rgba(0,0,0,0.8);
-	position: relative;
-}
-
-.titleDiv  {
-	background-image: url("../images/dad.png");
-	background-size: cover;
-	height: 400px;
-	margin: -1px;
-	line-height: 400px;
-	text-align: center;
-}
-
-.titleDiv h1 {
-	display: inline-block;
-	vertical-align: middle;
-	line-height: normal;
-	color: white;   
-	text-shadow: 1px 2px 10px rgba(0,0,0, 0.5);
-}
-
-.firstBar {
-	box-shadow: 0 0 10px rgba(0,0,0,0.6);
-	position: relative;
-}
-
-.survey, .questions {
-	float: left;
-	width: 50%;
-	text-align: center;
-}
-
-.survey img, .questions img {
-	height: 100px;
-}
-
-/***************************
  GENERAL 
  **************************/
 
@@ -66,36 +21,218 @@ a {
 	color: white;
 }
 
+.button {
+	padding: 1em 1.5em;
+	color: white;
+	background-color: #7cc74c;
+	border: none;
+	border-radius: 6px;
+	margin-top: 10px;
+    display: block;
+    float: right;
+}
+
 /***************************
- NAVIGATION 
+ SPECIFIC 
  **************************/
 
+/***** header and footer ******/
+
+.main-header, .main-footer {
+	background-color: #137abe;
+	margin: 0;
+	height: 10em;
+	box-shadow: 0 10px 5px #000;
+	position: relative;
+}
+
+.main-header {
+	box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.logo {
+	float: left;
+	padding: 0.5em 1em;
+	height: 6em;
+}
+
+.main-footer .logo {
+	position: absolute;
+	bottom: 0;
+}
+
+/****** navigation *******/ 
+ 
 ul {
-  list-style-type: none;
-  
-  margin: 0;
+	margin: 0;
 }
 
 li {
 	display: inline-block;
-	padding: 10px;
-	text
+	padding: 0.5em;
 }
 
-#navigation {
+
+/***** - - main content of site - - *****/
+
+/***** heroes ******/
+
+.hero {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 300px;
+	margin: -1px;
+	display: flex;
+}
+
+.hero1  {
+	background-image: url("../images/dad.png");
+	height: 400px;
+}
+
+.hero2  {
+	background-image: url("../images/dad2.png");
+}
+
+.hero3  {
+	background-image: url("../images/dad3.png");
+}
+
+.hero h1, .hero h2 {
+	color: white;   
+	text-shadow: 1px 2px 10px rgba(0,0,0, 0.5);
+	margin: 0;
+}
+
+.hero .textContainer {
+	align-self: center;
+	padding-left: 100px;
+}
+
+.hero1 h1 {
+	margin: auto; /* centers title */
+}
+
+.hero3 .textContainer {
+	text-align: right;
+	margin-left: auto;
+	padding-right: 100px;
+}
+
+
+/***** info bars ******/
+
+.infoBar {
+	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+	position: relative;
+	padding-bottom: 30px;
+}
+
+.survey, .questions {
+	width: 90%;
+	margin-left: 5%;
+	margin-right: 5%;
 	text-align: center;
-	padding-right: 3%;
-	padding-top: 100px;
+	padding-top: 30px;
 }
 
+.survey img, .questions img {
+	height: 100px;
+}
+
+.horizLine {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #999;
+    margin: 1em 0;
+    padding: 0;
+    width: 80px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.whoWeAre {
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	padding-top: 50px;
+}
+
+.fourthBar {
+	box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
 
 /***************************
 MEDIA QUERIES
 **************************/
 
 @media only screen and (min-width: 500px){
-	.titleDiv  {
+
+	.hero1  {
 		height: 600px;
 		line-height: 600px;
 	}
+
+	.survey, .questions {
+		float: left;
+		width: 42%;
+		margin-left: 4%;
+		margin-right: 4%;
+	}
+	
+	.navigation {
+		padding-right: 2em;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		text-align: right;
+	}
+
+	.main-header .navigation {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+	.twoThirdsDiv {
+		width: 60%;
+		float: left;
+		padding-right: 10%;
+	}
+
+	.oneThirdDiv {
+		width: 20%;
+		padding-top: 1px; /*somehow lines up the titles THE TEAM and NEWS */
+	}
+
+	.fourthBar {
+		padding: 100px;
+		padding-top: 20px;
+	}
 }
+
+@media only screen and (min-width: 900px){
+	.hero2  {
+		height: 400px;
+	}
+	.logo { 
+		height: 8em;
+	}
+	.main-footer .logo {
+		position: static;
+	}
+}
+
+@media only screen and (min-width: 1400px){
+	.hero3  {
+		height: 500px;
+	}
+}
+
+/*320*/
+/*480*/
+/*font size bump somewhere in here*/
+/*600  mobile navigation but desktop style */
+/*1000*/
+/*1200*/
