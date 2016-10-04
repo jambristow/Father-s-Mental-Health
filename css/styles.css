@@ -61,16 +61,153 @@ a {
 	bottom: 0;
 }
 
+.menuButton {
+	background: 0 0;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .5rem;
+    border: 1px solid rgba(208,207,207,.5);
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+}
+
+.menuButton:hover {
+	background:rgba(208,207,207,.1);
+	cursor:pointer
+}
+
 /****** navigation *******/ 
- 
-ul {
+.navigation {
+	display: none;
+}
+
+.navigation ul {
 	margin: 0;
 }
 
-li {
+.navigation li {
 	display: inline-block;
 	padding: 0.5em;
 }
+
+/****** modal navigation ******/
+.overlay {
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: #63b8dc; /* Fallback color */
+    -webkit-animation-name: animateOpacityIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animateOpacityIn;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animateOpacityIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes animateOpacityIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+.overlay .content{
+	margin: 0 auto;
+	-webkit-animation-name: animateWidthIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animateWidthIn;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animateWidthIn {
+    from {width: 80%;} 
+    to {width: 100%;}
+}
+
+@keyframes animateWidthIn {
+    from {width: 80%;} 
+    to {width: 100%;}
+}
+
+.overlay .modalNav {
+    background-color: #fff;
+    padding: 4em;
+    margin: 4em;
+}
+
+.modalNav ul {
+	list-style: none;
+	border: 1px solid #d0cfcf;
+	padding: 0;
+	margin: 0;
+}
+
+.modalNav a {
+	display: block;
+	padding: 2rem;
+	color: black;
+	font-weight: 700;
+	font-size: 1.5em;
+	-webkit-animation-name: animatePaddingIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatePaddingIn;
+    animation-duration: 0.4s
+}
+
+@-webkit-keyframes animatePaddingIn {
+    from {padding: 1rem;} 
+    to {padding: 2rem;}
+}
+
+@keyframes animatePaddingIn {
+    from {padding: 1rem;} 
+    to {padding: 2rem;}
+}
+
+.modalNav a:hover {
+	background-color: #f0f0f0;
+}
+
+.modalNav li {
+	border-bottom: 1px solid #d0cfcf;
+}
+
+.overlay .exit {
+	position: fixed;
+    z-index: 4;
+    background: #203b46;
+    width: 4rem;
+    height: 4rem;
+    top: 2rem;
+    left: 2rem;
+}
+
+.overlay .exit span {
+	color: #fff;
+	font-size: 3rem;
+	padding-left: 1.3rem;
+}
+
+.exit:hover,
+.exit:focus {
+    background-color: black;
+    cursor: pointer;
+}
+
+.exit span:hover,
+.exit span:focus {
+	pointer-events: none;
+}
+
 
 
 /***** - - main content of site - - *****/
@@ -209,6 +346,15 @@ MEDIA QUERIES
 	.fourthBar {
 		padding: 100px;
 		padding-top: 20px;
+	}
+}
+
+@media only screen and (min-width: 700px){
+	.navigation {
+		display: inline;
+	}
+	.menuButton {
+		display: none;
 	}
 }
 
